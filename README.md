@@ -22,5 +22,13 @@
    - npx husky add .husky/commit-msg 'npx --no-install commitlint --edit'
    - npm install @commitlint/config-conventional @commitlint/cli --dev
    - Tạo file config cho commitlint .commitlintrc.json
+   - Thêm vào script của package.json 
+   
+   ![image info](./pictures/prepare_husky.png)
    - (for more information about convention message: https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)
+6. Add tailwindcss
+   - npm install -D tailwindcss postcss autoprefixer
+   - npx tailwindcss init
+
+
 

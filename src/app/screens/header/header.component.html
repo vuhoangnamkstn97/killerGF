@@ -1,0 +1,17 @@
+<div class="flex justify-between">
+  <img alt="" src="assets/images/svg/vqlogo.png" width="" />
+  <tui-tabs
+    [(activeItemIndex)]="activeItemIndex"
+    class="flex justify-center items-center space-x-4"
+  >
+    <button
+      tuiTab
+      *ngFor="let tab of tabs"
+      [routerLink]="tab.link"
+      routerLinkActive="active"
+      class="active:text-purple-500 from-neutral-500"
+    >
+      {{ tab.tabName }}
+    </button>
+  </tui-tabs>
+</div>
