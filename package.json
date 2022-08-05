@@ -10,11 +10,6 @@
     "lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --fix",
     "format": "npx prettier 'src/**/*.{js,jsx,ts,tsx,html,css,scss}' --write"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint"
-    }
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
