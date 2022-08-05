@@ -17,5 +17,9 @@
 4. Install husky
    - npm install husky --save-dev
    - npm install --save-dev pretty-quick husky   
-
+   - npx husky-init
+5. Install commitlint
+   - npx husky add .husky/commit-msg 'npx --no-install commitlint --edit'
+   - npm install @commitlint/config-conventional @commitlint/cli --dev
+   - Tạo file config cho commitlint .commitlintrc.json
 
