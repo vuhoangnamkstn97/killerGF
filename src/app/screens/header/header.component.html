@@ -1,21 +1,29 @@
-<div class="flex justify-between">
-  <img alt="" src="assets/images/svg/vqlogo.png" width="" />
-  <ng-container [ngSwitch]="currentBreakpoint">
-    <tui-tabs
-      *ngSwitchCase="Breakpoints.Large"
-      [(activeItemIndex)]="activeItemIndex"
-      class="flex justify-center items-center space-x-4"
-    >
-      <button
-        tuiTab
-        *ngFor="let tab of tabs"
-        [routerLink]="tab.link"
-        routerLinkActive="active"
-        class="active:text-purple-500 from-neutral-500"
-      >
-        {{ tab.tabName }}
-      </button>
-    </tui-tabs>
-    <p *ngSwitchCase="'(min-width: 500px)'">Mobile</p>
-  </ng-container>
+<div
+  class="flex justify-between"
+  *ngIf="currentBreakpoint === Breakpoints.Large; else mobileHeader"
+>
+  <div></div>
+  <nav>
+    <ul class="flex space-x-4">
+      <li *ngFor="let tab of tabs">
+        <a
+          [routerLink]="tab.link"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          [ngClass]="{ tab_item: true, active: router.url === tab.link }"
+          >{{ tab.tabName }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="flex space-x-8">
+    <img src="assets/images/svg/icn_discord.png" alt="" class="icon" />
+    <img src="assets/images/svg/icn_twitter.png" alt="" class="icon" />
+    <img src="assets/images/svg/Opensea.svg" alt="" class="icon" />
+  </div>
 </div>
+<ng-template #mobileHeader>
+  <div class="flex justify-end">
+    <button><fa-icon [icon]="faBars" class="text-4xl"></fa-icon></button>
+  </div>
+</ng-template>

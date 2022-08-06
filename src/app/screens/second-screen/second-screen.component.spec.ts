@@ -8,9 +8,8 @@ describe('SecondScreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SecondScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [SecondScreenComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

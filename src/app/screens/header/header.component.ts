@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { distinctUntilChanged, tap } from 'rxjs';
+import { Router } from '@angular/router';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,12 +11,7 @@ import { distinctUntilChanged, tap } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   readonly breakpoint$ = this.breakpointObserver
-    .observe([
-      Breakpoints.Large,
-      Breakpoints.Medium,
-      Breakpoints.Small,
-      '(min-width: 500px)',
-    ])
+    .observe([Breakpoints.Large, Breakpoints.Medium, Breakpoints.Small])
     .pipe(
       tap((value) => console.log(value)),
       distinctUntilChanged()
@@ -32,20 +29,24 @@ export class HeaderComponent implements OnInit {
   ];
   currentBreakpoint: string = '';
   Breakpoints = Breakpoints;
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  faBars = faBars;
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
     this.breakpoint$.subscribe(() => this.breakpointChanged());
   }
   private breakpointChanged() {
-    if (this.breakpointObserver.isMatched(Breakpoints.Large)) {
-      this.currentBreakpoint = Breakpoints.Large;
-    } else if (this.breakpointObserver.isMatched(Breakpoints.Medium)) {
-      this.currentBreakpoint = Breakpoints.Medium;
-    } else if (this.breakpointObserver.isMatched(Breakpoints.Small)) {
+    console.log(this.breakpointObserver);
+    if (
+      this.breakpointObserver.isMatched(Breakpoints.Small) ||
+      this.breakpointObserver.isMatched(Breakpoints.XSmall)
+    ) {
       this.currentBreakpoint = Breakpoints.Small;
-    } else if (this.breakpointObserver.isMatched('(min-width: 500px)')) {
-      this.currentBreakpoint = '(min-width: 500px)';
+    } else {
+      this.currentBreakpoint = Breakpoints.Large;
     }
   }
 }
