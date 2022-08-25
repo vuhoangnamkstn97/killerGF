@@ -4,5 +4,29 @@
     <app-menu-items></app-menu-items>
     <app-social-items></app-social-items>
   </ng-container>
-  <ng-container> <i nz-icon nzType="bars" nzTheme="outline"></i></ng-container>
+  <ng-container *ngIf="currentBreakpoint !== Breakpoints.Large">
+    <i
+      *ngIf="!isMenuOpen"
+      nz-icon
+      nzType="menu"
+      nzTheme="outline"
+      (click)="handleClickMenuIcon(true)"
+      class="text-4xl text-black"
+    ></i>
+    <i
+      *ngIf="isMenuOpen"
+      nz-icon
+      nzType="close"
+      nzTheme="outline"
+      (click)="handleClickMenuIcon(false)"
+      class="text-4xl text-black"
+    ></i>
+  </ng-container>
+</div>
+<div
+  *ngIf="currentBreakpoint !== Breakpoints.Large && isMenuOpen"
+  appObserveSlideUp
+>
+  <app-menu-items></app-menu-items>
+  <app-social-items></app-social-items>
 </div>

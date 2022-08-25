@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.less'],
 })
 export class HeaderComponent implements OnInit {
+  isMenuOpen = false;
   readonly breakpoint$ = this.breakpointObserver
     .observe([Breakpoints.Large, Breakpoints.Medium, Breakpoints.Small])
     .pipe(distinctUntilChanged());
@@ -31,5 +32,8 @@ export class HeaderComponent implements OnInit {
     } else if (this.breakpointObserver.isMatched(Breakpoints.Small)) {
       this.currentBreakpoint = Breakpoints.Small;
     }
+  }
+  handleClickMenuIcon(isMenuOpen: boolean){
+    this.isMenuOpen = isMenuOpen
   }
 }

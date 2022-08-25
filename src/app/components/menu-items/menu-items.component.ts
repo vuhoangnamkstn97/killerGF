@@ -15,26 +15,26 @@ export class MenuItemsComponent implements OnInit {
       title: 'The Story',
       link: '#story',
     },
-    {
-      title: 'Galerry',
-      link: '/galerry',
-    },
+    // {
+    //   title: 'Galerry',
+    //   link: '/galerry',
+    // },
     {
       title: 'Roadmap',
-      link: '/roadmap',
+      link: '#roadmap',
     },
     {
       title: 'Artist',
-      link: '/artist',
+      link: '#feature_artist',
     },
-    {
-      title: 'Team',
-      link: '/team',
-    },
-    {
-      title: 'License',
-      link: '/license',
-    },
+    // {
+    //   title: 'Team',
+    //   link: '/team',
+    // },
+    // {
+    //   title: 'License',
+    //   link: '/license',
+    // },
   ];
   constructor() {}
 

@@ -5,7 +5,7 @@
   <h1 class="text-primary-500 text-6xl font-anton" appObserveSlideUp>
     FEATURE ARTISTS
   </h1>
-  <div class="w-full z-10">
+  <div class="w-full z-10" appObserveSlideUp>
     <owl-carousel-o [options]="customOptions">
       <ng-container *ngFor="let slide of slidesStore">
         <ng-template carouselSlide [id]="slide.id">
