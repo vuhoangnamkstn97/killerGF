@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
       this.currentBreakpoint = Breakpoints.Small;
     }
   }
-  handleClickMenuIcon(isMenuOpen: boolean){
-    this.isMenuOpen = isMenuOpen
+  handleClickMenuIcon(isMenuOpen: boolean) {
+    this.isMenuOpen = isMenuOpen;
   }
 }
