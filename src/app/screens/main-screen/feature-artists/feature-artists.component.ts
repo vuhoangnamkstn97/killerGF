@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 export interface IOwlItem {
   id: string;
@@ -11,10 +11,9 @@ export interface IOwlItem {
   templateUrl: './feature-artists.component.html',
   styleUrls: ['./feature-artists.component.less'],
 })
-export class FeatureArtistsComponent implements OnInit, AfterViewInit {
+export class FeatureArtistsComponent implements AfterViewInit {
   constructor() {}
 
-  ngOnInit(): void {}
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,

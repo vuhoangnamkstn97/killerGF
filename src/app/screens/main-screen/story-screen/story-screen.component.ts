@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-story-screen',
   templateUrl: './story-screen.component.html',
   styleUrls: ['./story-screen.component.less'],
 })
-export class StoryScreenComponent implements OnInit {
+export class StoryScreenComponent {
   storyImages = [
     {
       src: 'assets/images/story_imgs/1.jpg',
@@ -21,6 +21,4 @@ export class StoryScreenComponent implements OnInit {
     },
   ];
   constructor() {}
-
-  ngOnInit(): void {}
 }
