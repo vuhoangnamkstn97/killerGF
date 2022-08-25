@@ -47,11 +47,11 @@ export class ObserveSlideUpDirective
     const options = {
       rootMargin: '0px',
       root: this.document,
-      threshold: 0
+      threshold: 0,
     };
 
     const isIntersecting = (entry: IntersectionObserverEntry) =>
-      entry.isIntersecting;
+      entry.isIntersecting || entry.intersectionRatio > 0;
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
