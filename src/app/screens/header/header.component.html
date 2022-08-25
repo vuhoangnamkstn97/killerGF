@@ -1,29 +1,8 @@
-<div
-  class="flex justify-between"
-  *ngIf="currentBreakpoint === Breakpoints.Large; else mobileHeader"
->
-  <div></div>
-  <nav>
-    <ul class="flex space-x-4">
-      <li *ngFor="let tab of tabs">
-        <a
-          [routerLink]="tab.link"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          [ngClass]="{ tab_item: true, active: router.url === tab.link }"
-          >{{ tab.tabName }}</a
-        >
-      </li>
-    </ul>
-  </nav>
-  <div class="flex space-x-8">
-    <img src="assets/images/svg/icn_discord.png" alt="" class="icon" />
-    <img src="assets/images/svg/icn_twitter.png" alt="" class="icon" />
-    <img src="assets/images/svg/Opensea.svg" alt="" class="icon" />
-  </div>
+<div class="flex justify-between items-center animate-slideUp">
+  <img src="assets/images/logo/logo.png" class="h-16" />
+  <ng-container *ngIf="currentBreakpoint === Breakpoints.Large">
+    <app-menu-items></app-menu-items>
+    <app-social-items></app-social-items>
+  </ng-container>
+  <ng-container> <i nz-icon nzType="bars" nzTheme="outline"></i></ng-container>
 </div>
-<ng-template #mobileHeader>
-  <div class="flex justify-end">
-    <button><fa-icon [icon]="faBars" class="text-4xl"></fa-icon></button>
-  </div>
-</ng-template>

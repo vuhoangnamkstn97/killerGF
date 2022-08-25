@@ -1,0 +1,21 @@
+<section
+  id="feature_artist"
+  class="flex flex-col items-center justify-center text-center space-y-8"
+>
+  <h1 class="text-primary-500 text-6xl font-anton" appObserveSlideUp>
+    FEATURE ARTISTS
+  </h1>
+  <div class="w-full z-10">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let slide of slidesStore">
+        <ng-template carouselSlide [id]="slide.id">
+          <app-feature-artist-item
+            [avatar]="slide.avatar"
+            [name]="slide.name"
+            [description]="slide.description"
+          ></app-feature-artist-item>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>

@@ -1,0 +1,9 @@
+<div class="flex justify-center space-x-8 pb-4">
+  <a
+    *ngFor="let menu of menuItems"
+    class="text-xl font-light font-anton"
+    [href]="menu.link"
+  >
+    {{ menu.title | uppercase }}
+  </a>
+</div>
