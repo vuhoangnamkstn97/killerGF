@@ -2,6 +2,7 @@
 
 1. Install eslint
    - Install eslint: ng add @angular-eslint/schematics
+   - Install plugin typescript cho eslint: npm i --save-dev typescript @typescript-eslint/parser
    - Check eslint: ng lint --fix
    - Tạo file config cho eslint ở .eslintrc.json
    - Tạo file ignore cho eslint ở .eslintignore

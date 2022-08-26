@@ -7,10 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class FeatureArtistItemComponent {
   @Input()
-  avatar: string = '';
+  avatar = '';
   @Input()
-  name: string = '';
+  name = '';
   @Input()
-  description: string = '';
-  constructor() {}
+  description = '';
 }

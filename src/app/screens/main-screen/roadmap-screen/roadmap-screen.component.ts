@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './roadmap-screen.component.html',
   styleUrls: ['./roadmap-screen.component.less'],
 })
-export class RoadmapScreenComponent {
-  constructor() {}
-}
+export class RoadmapScreenComponent {}

@@ -19,13 +19,10 @@ export class ObserveSlideUpDirective
 {
   @Output() visible = new EventEmitter<HTMLElement>();
   private observer: IntersectionObserver | undefined;
-  isIntersected: boolean = false;
+  isIntersected = false;
   constructor(
-    // eslint-disable-next-line no-unused-vars
     private element: ElementRef,
-    // eslint-disable-next-line no-unused-vars
     @Inject(DOCUMENT) private readonly document: Document,
-    // eslint-disable-next-line no-unused-vars
     private renderer: Renderer2
   ) {}
   ngOnInit() {

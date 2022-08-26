@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './home-screen.component.html',
   styleUrls: ['./home-screen.component.less'],
 })
-export class HomeScreenComponent {
-  constructor() {}
-}
+export class HomeScreenComponent {}

@@ -20,5 +20,4 @@ export class StoryScreenComponent {
       src: 'assets/images/story_imgs/4.jpg',
     },
   ];
-  constructor() {}
 }

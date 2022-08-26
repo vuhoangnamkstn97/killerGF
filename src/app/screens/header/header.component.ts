@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
-import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { distinctUntilChanged, tap } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { distinctUntilChanged } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,7 +13,7 @@ export class HeaderComponent implements OnInit {
     .observe([Breakpoints.Large, Breakpoints.Medium, Breakpoints.Small])
     .pipe(distinctUntilChanged());
   activeItemIndex = 0;
-  currentBreakpoint: string = '';
+  currentBreakpoint = '';
   Breakpoints = Breakpoints;
   constructor(
     private breakpointObserver: BreakpointObserver,

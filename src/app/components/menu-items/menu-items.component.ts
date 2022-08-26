@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-menu-items',
   templateUrl: './menu-items.component.html',
   styleUrls: ['./menu-items.component.less'],
 })
-export class MenuItemsComponent implements OnInit {
+export class MenuItemsComponent {
   menuItems = [
     {
       title: 'Home',
@@ -36,8 +36,4 @@ export class MenuItemsComponent implements OnInit {
     //   link: '/license',
     // },
   ];
-  constructor() {}
-
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit(): void {}
 }

@@ -12,8 +12,6 @@ export interface IOwlItem {
   styleUrls: ['./feature-artists.component.less'],
 })
 export class FeatureArtistsComponent implements AfterViewInit {
-  constructor() {}
-
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,

@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './social-items.component.html',
   styleUrls: ['./social-items.component.less'],
 })
-export class SocialItemsComponent {
-  constructor() {}
-}
+export class SocialItemsComponent {}
