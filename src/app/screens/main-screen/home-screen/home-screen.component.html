@@ -2,10 +2,10 @@
   id="home"
   class="flex flex-col items-center justify-center text-center space-y-4"
 >
-  <h1 class="text-primary-500 text-6xl font-anton" appObserveSlideUp>
+  <h1 class="text-primary-500 text-6xl font-anton" [appObserveSlideUp]="true">
     WELCOME TO KILLER GF
   </h1>
-  <p style="font-weight: 500" class="text-lg" appObserveSlideUp>
+  <p style="font-weight: 500" class="text-lg" [appObserveSlideUp]="true">
     Killer GF is a 7,777 generative portrait art collection by a former Riot
     Games Artist, Zeronis, with over 240 meticulously designed features that
     contrasts cute and aesthetically appealing girlfriends that also happen to
@@ -17,9 +17,13 @@
     nzSize="large"
     nzShape="round"
     class="font-semibold p-6"
-    appObserveSlideUp
+    [appObserveSlideUp]="true"
   >
     VIEW ON OPENSEA
   </button>
-  <img src="assets/images/img/1.png" appObserveSlideUp />
+  <img
+    src="assets/images/img/1.png"
+    (load)="onImageLoad()"
+    [appObserveSlideUp]="true"
+  />
 </section>

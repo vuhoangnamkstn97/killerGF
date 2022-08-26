@@ -25,7 +25,7 @@
 </div>
 <div
   *ngIf="currentBreakpoint !== Breakpoints.Large && isMenuOpen"
-  appObserveSlideUp
+  [appObserveSlideUp]="true"
 >
   <app-menu-items></app-menu-items>
   <app-social-items></app-social-items>

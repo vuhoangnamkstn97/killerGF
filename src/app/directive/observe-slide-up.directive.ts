@@ -5,6 +5,7 @@ import {
   ElementRef,
   EventEmitter,
   Inject,
+  Input,
   OnDestroy,
   OnInit,
   Output,
@@ -17,6 +18,7 @@ import {
 export class ObserveSlideUpDirective
   implements OnDestroy, OnInit, AfterViewInit
 {
+  @Input('appObserveSlideUp') isDirectiveEnable = true;
   @Output() visible = new EventEmitter<HTMLElement>();
   private observer: IntersectionObserver | undefined;
   isIntersected = false;
@@ -52,7 +54,11 @@ export class ObserveSlideUpDirective
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (isIntersecting(entry) && !this.isIntersected) {
+        if (
+          isIntersecting(entry) &&
+          !this.isIntersected &&
+          this.isDirectiveEnable
+        ) {
           this.isIntersected = true;
           console.log('intersect element', this.element);
           this.renderer.addClass(this.element.nativeElement, 'animate-slideUp');

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadImagesService } from 'src/app/services/load-images.service';
 
 @Component({
   selector: 'app-story-screen',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./story-screen.component.less'],
 })
 export class StoryScreenComponent {
+  constructor(private loadImagesService: LoadImagesService) {}
+  isLoadedImage$ = this.loadImagesService.getLoadedImages();
   storyImages = [
     {
       src: 'assets/images/story_imgs/1.jpg',
