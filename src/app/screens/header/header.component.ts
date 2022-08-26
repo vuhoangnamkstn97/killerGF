@@ -10,7 +10,12 @@ import { distinctUntilChanged } from 'rxjs';
 export class HeaderComponent implements OnInit {
   isMenuOpen = false;
   readonly breakpoint$ = this.breakpointObserver
-    .observe([Breakpoints.Large, Breakpoints.Medium, Breakpoints.Small])
+    .observe([
+      Breakpoints.Large,
+      Breakpoints.Medium,
+      Breakpoints.Small,
+      Breakpoints.XLarge,
+    ])
     .pipe(distinctUntilChanged());
   activeItemIndex = 0;
   currentBreakpoint = '';
@@ -24,7 +29,10 @@ export class HeaderComponent implements OnInit {
     this.breakpoint$.subscribe(() => this.breakpointChanged());
   }
   private breakpointChanged() {
-    if (this.breakpointObserver.isMatched(Breakpoints.Large)) {
+    if (
+      this.breakpointObserver.isMatched(Breakpoints.Large) ||
+      this.breakpointObserver.isMatched(Breakpoints.XLarge)
+    ) {
       this.currentBreakpoint = Breakpoints.Large;
     } else if (this.breakpointObserver.isMatched(Breakpoints.Medium)) {
       this.currentBreakpoint = Breakpoints.Medium;
